@@ -6,5 +6,8 @@ public:
 	int Update();
 	int Destroy();
 	int Render();
+
+protected:
+	int m_txMario{ -1 };
 };
 

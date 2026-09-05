@@ -17,26 +17,30 @@ int AppRender()
 int CApplication::Init()
 {
 	InitSdk();
-	m_sceneBegin.Init();
+	//m_sceneBegin.Init();
+	m_scenePlay.Init();
 	return 0;
 }
 
 int CApplication::Update()
 {
-	m_sceneBegin.Update();
+	//m_sceneBegin.Update();
+	m_scenePlay.Update();
 	return 0;
 }
 
 int CApplication::Destroy()
 {
-	m_sceneBegin.Destroy();
+	//m_sceneBegin.Destroy();
+	m_scenePlay.Destroy();
 	g2_DestroyWin();
 	return 0;
 }
 
 int CApplication::Render()
 {
-	m_sceneBegin.Render();
+	//m_sceneBegin.Render();
+	m_scenePlay.Render();
 	return 0;
 }
 

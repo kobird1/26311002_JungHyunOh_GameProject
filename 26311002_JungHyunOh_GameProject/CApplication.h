@@ -2,6 +2,7 @@
 #include <windows.h>
 #include <string>
 #include "SceneGameBegin.h"
+#include "SceneGamePlay.h"
 
 class CApplication
 {
@@ -16,11 +17,12 @@ protected:
 
 protected:
 	//windows
-	POINT m_winPos{ 100,100 };
+	POINT m_winPos{ 100, 100 };
 	SIZE m_winSize{ 800, 600 };
 
 	std::string m_winName = "BugerRush";
 
 	SceneGameBegin m_sceneBegin;
+	SceneGamePlay m_scenePlay;
 };
 
