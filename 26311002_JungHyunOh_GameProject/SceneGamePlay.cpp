@@ -3,23 +3,24 @@
 
 int SceneGamePlay::Init()
 {
-	this->m_txMario = g2_TextureLoad("Texture/tst.png");
+	player.Init();
 	return 0;
 }
 
 int SceneGamePlay::Destroy()
 {
-	g2_TextureRelease(m_txMario);
+	player.Destroy();
 	return 0;
 }
 
 int SceneGamePlay::Update()
 {
+	player.Update();
 	return 0;
 }
 
 int SceneGamePlay::Render()
 {
-	g2_Draw2D(m_txMario, nullptr);
+	player.Render();
 	return 0;
 }

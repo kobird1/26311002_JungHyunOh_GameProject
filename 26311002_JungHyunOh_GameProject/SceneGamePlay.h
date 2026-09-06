@@ -1,4 +1,6 @@
 #pragma once
+#include "Player.h"
+
 class SceneGamePlay
 {
 public:
@@ -8,6 +10,6 @@ public:
 	int Render();
 
 protected:
-	int m_txMario{ -1 };
+	Player player;
 };
 
