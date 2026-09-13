@@ -1,14 +1,32 @@
 #pragma once
-class SceneGameBegin
+#include <vector>
+#include "glc2d.h"
+#include "Scene.h"
+#include "Button.h"
+
+using std::vector;
+
+class SceneGameBegin : public Scene
 {
 public:
-	int Init();
-	int Update();
-	int Destroy();
-	int Render();
+	int Init() override;
+	int Update(float deltaTime) override;
+	int Destroy() override;
+	int Render() override;
 
-protected:
-	//game texture
-	int m_txMario{ -1 };
+private:
+	void SelectButton(Button* button);
+
+private:
+	int m_txBg{ -1 };
+	
+	int m_selectedIndex{};
+
+	Button m_startButton;
+	Button m_exitButton;
+
+	Button* m_selectedButton{};
+
+	vector<Button*>buttons{};
 };
 

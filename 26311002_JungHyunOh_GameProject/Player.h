@@ -1,11 +1,11 @@
 #pragma once
-#include "GameObject.h"
+#include "Character.h"
 
-class Player : public GameObject
+class Player : public Character
 {
 public:
     int Init() override;
-    int Update() override;
+    int Update(float deltaTime) override;
     int Render() override;
     int Destroy() override;
 

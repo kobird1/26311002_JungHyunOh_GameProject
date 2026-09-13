@@ -13,11 +13,11 @@ class GameObject
 {
 public:
 	virtual int Init() { return 0; }
-	virtual int Update() { return 0; }
+	virtual int Update(float deltaTime) { return 0; }
 	virtual int Destroy() { return 0; }
 	virtual int Render() { return 0; }
 
-protected:
+public:
 	Transform transform;
 };
 

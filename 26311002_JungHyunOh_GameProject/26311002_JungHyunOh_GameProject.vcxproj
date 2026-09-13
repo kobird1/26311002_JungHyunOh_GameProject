@@ -128,8 +128,9 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="Button.cpp" />
     <ClCompile Include="CApplication.cpp" />
-    <ClCompile Include="GameObject.cpp" />
+    <ClCompile Include="Character.cpp" />
     <ClCompile Include="Player.cpp" />
     <ClCompile Include="SceneGameBegin.cpp" />
     <ClCompile Include="SceneGamePlay.cpp" />
@@ -141,9 +142,12 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Button.h" />
     <ClInclude Include="CApplication.h" />
+    <ClInclude Include="Character.h" />
     <ClInclude Include="GameObject.h" />
     <ClInclude Include="Player.h" />
+    <ClInclude Include="Scene.h" />
     <ClInclude Include="SceneGameBegin.h" />
     <ClInclude Include="SceneGamePlay.h" />
     <ClInclude Include="SceneGameResult.h" />
