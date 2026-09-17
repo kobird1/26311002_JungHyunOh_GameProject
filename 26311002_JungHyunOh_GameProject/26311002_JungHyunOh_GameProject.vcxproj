@@ -131,7 +131,9 @@
     <ClCompile Include="Button.cpp" />
     <ClCompile Include="CApplication.cpp" />
     <ClCompile Include="Character.cpp" />
+    <ClCompile Include="GameObject.cpp" />
     <ClCompile Include="Player.cpp" />
+    <ClCompile Include="Rock.cpp" />
     <ClCompile Include="SceneGameBegin.cpp" />
     <ClCompile Include="SceneGamePlay.cpp" />
     <ClCompile Include="SceneGameResult.cpp" />
@@ -147,6 +149,7 @@
     <ClInclude Include="Character.h" />
     <ClInclude Include="GameObject.h" />
     <ClInclude Include="Player.h" />
+    <ClInclude Include="Rock.h" />
     <ClInclude Include="Scene.h" />
     <ClInclude Include="SceneGameBegin.h" />
     <ClInclude Include="SceneGamePlay.h" />

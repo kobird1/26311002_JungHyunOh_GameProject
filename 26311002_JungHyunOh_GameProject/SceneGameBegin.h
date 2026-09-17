@@ -19,7 +19,7 @@ private:
 
 private:
 	int m_txBg{ -1 };
-	
+	int m_font{ -1 };
 	int m_selectedIndex{};
 
 	Button m_startButton;

@@ -1,6 +1,7 @@
 #pragma once
-#include "Player.h"
 #include "Scene.h"
+#include "Player.h"
+#include "Rock.h"
 
 class SceneGamePlay : public Scene
 {
@@ -12,7 +13,8 @@ public:
 
 protected:
 	int m_txBg{ -1 };
-
+	int m_bgm{ -1 };
 	Player player;
+	Rock rock;
 };
 

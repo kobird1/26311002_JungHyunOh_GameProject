@@ -49,12 +49,6 @@ int Button::Render()
 
 int Button::Destroy()
 {
-	if (-1 != m_texture)
-	{
-		g2_TextureRelease(m_texture);
-		m_texture = -1;
-	}
-
 	m_width = 0;
 	m_height = 0;
 

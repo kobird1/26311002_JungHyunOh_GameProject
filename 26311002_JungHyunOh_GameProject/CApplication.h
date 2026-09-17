@@ -39,4 +39,3 @@ protected:
 
 //전역 접근
 extern CApplication g_app;
-
