@@ -18,8 +18,8 @@ RECT GameObject::GetCollider() const
 	float halfWidth = boxCollider.size.x * transform.scale.x / 2.0f;
 	float halfHeight = boxCollider.size.y * transform.scale.y / 2.0f;
 
-	return RECT(center.x - halfWidth,
-				center.y - halfHeight, 
-				center.x + halfWidth, 
-				center.y + halfHeight);
+	return RECT(static_cast<LONG>(center.x - halfWidth),
+				static_cast<LONG>(center.y - halfHeight),
+				static_cast<LONG>(center.x + halfWidth),
+				static_cast<LONG>(center.y + halfHeight));
 }

@@ -32,5 +32,6 @@ public:
 
 protected:
 	BoxCollider boxCollider;
+
 };
 

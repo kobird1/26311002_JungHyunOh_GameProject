@@ -6,8 +6,9 @@ int Player::Init()
     transform.position = { 99.5f, 542.5f };
     transform.scale = { 3, 3 };
     transform.center = { 8, 8 };
-
+    m_moveSpeed = 150.0f;
     boxCollider.size = { 16, 16 };
+
     return 0;
 }
 

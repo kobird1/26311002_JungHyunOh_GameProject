@@ -3,11 +3,18 @@
 int Rock::Init()
 {
     m_txRock = g2_TextureLoad("resource/texture/rock.png");
-    transform.position = { 99.5f, -80.0f };
+
+    static std::random_device rd;
+    static std::mt19937 gen(rd());
+    
+    std::uniform_int_distribution<int> dist(0, 310);
+    float posX = static_cast<float>(dist(gen));
+
+    transform.position = { posX, -80.0f };
     transform.scale = { 3, 3 };
     transform.center = { 10, 10 };
-    m_moveSpeed = 400.0f;
-    boxCollider.size = { 20, 20 };
+    m_moveSpeed = 500.0f;
+    boxCollider.size = { 16, 16 };
 
     return 0;
 }

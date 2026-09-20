@@ -1,5 +1,6 @@
 #pragma once
 #include "Character.h"
+#include <Random>
 
 class Rock : public Character
 {

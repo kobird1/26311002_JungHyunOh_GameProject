@@ -1,5 +1,4 @@
 #include <glc2d.h>
-#include <stdio.h>
 #include "CApplication.h"
 
 int main()
