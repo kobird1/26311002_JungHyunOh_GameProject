@@ -4,7 +4,7 @@
 int SceneGamePlay::Init()
 {
 	m_txBg = g2_TextureLoad("resource/texture/tex_ui/background.png");
-	m_bgm = g2_SoundLoad("resource/audio/playBGM.wav");
+	m_bgm = g2_SoundLoad("resource/audio/playBGM.mp3");
 	g2_SoundReset(m_bgm);
 	g2_SoundPlay(m_bgm, true);
 
