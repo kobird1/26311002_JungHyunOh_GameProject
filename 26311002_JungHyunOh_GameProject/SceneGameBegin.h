@@ -1,6 +1,5 @@
 #pragma once
 #include <vector>
-#include "glc2d.h"
 #include "Scene.h"
 #include "Button.h"
 

@@ -14,13 +14,20 @@ public:
 	int Destroy() override;
 	int Render() override;
 
+public:
+	int GetScore() const;
+
 protected:
 	int m_txBg{ -1 };
 	int m_bgm{ -1 };
+	int m_font{ -1 };
+
+	int score{};
+	float timer{};
+	float rockSpawnTimer{};
+
 	Player player;
 	vector<Rock*> rocks;
-
-	float rockSpawnTimer{};
 
 	void SpawnRock();
 };

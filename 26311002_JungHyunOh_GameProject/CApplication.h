@@ -3,6 +3,7 @@
 #include <string>
 #include "SceneGameBegin.h"
 #include "SceneGamePlay.h"
+#include "SceneGameResult.h"
 
 using std::string;
 
@@ -31,6 +32,7 @@ protected:
 
 	SceneGameBegin m_sceneBegin;
 	SceneGamePlay m_scenePlay;
+	SceneGameResult m_sceneResult;
 
 	Scene* m_scene{};
 

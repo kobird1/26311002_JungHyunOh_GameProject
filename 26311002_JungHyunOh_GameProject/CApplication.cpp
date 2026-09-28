@@ -82,13 +82,14 @@ void CApplication::ChangeScene(int scene)
 	case 2:
 		m_scene = &m_scenePlay;
 		break;
-	
+
 	case 3:
-		PostQuitMessage(0);
-		return;
+		m_scene = &m_sceneResult;
+		break;
 
 	default:
-		break;
+		PostQuitMessage(0);
+		return;
 	}
 
 	m_scene->Init();

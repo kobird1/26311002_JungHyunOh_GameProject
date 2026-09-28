@@ -5,6 +5,7 @@ int SceneGamePlay::Init()
 {
 	m_txBg = g2_TextureLoad("resource/texture/tex_ui/background.png");
 	m_bgm = g2_SoundLoad("resource/audio/playBGM.mp3");
+	m_font = g2_FontCreate("¸¼Àº °íµñ", 30);
 	g2_SoundReset(m_bgm);
 	g2_SoundPlay(m_bgm, true);
 
@@ -15,6 +16,12 @@ int SceneGamePlay::Init()
 
 int SceneGamePlay::Update(float deltaTime)
 {
+	timer += deltaTime;
+	if (timer >= 1)
+	{
+		score += 10;
+		timer -= 1;
+	}
 	player.Update(deltaTime);
 	RECT pCollider = player.GetCollider();
 
@@ -52,7 +59,7 @@ int SceneGamePlay::Update(float deltaTime)
 
 		if (IntersectRect(&overlap, &pCollider, &rCollider))
 		{
-			return SCENE_BEGIN;
+			return SCENE_RESULT;
 		}
 	}
 	return SCENE_KEEP;
@@ -66,18 +73,21 @@ int SceneGamePlay::Render()
 	{
 		rock->Render();
 	}
+	g2_FontDrawText(m_font, { 50, 20, 240, 200 }, 0xFFFFFFFF, "%d", score);
 	return 0;
 }
 
 int SceneGamePlay::Destroy()
 {
-	g2_SoundStop(m_bgm);
 	for (auto& rock : rocks)
 	{
 		delete rock;
 	}
-
+	
+	g2_SoundStop(m_bgm);
 	rocks.clear();
+	score = 0;
+
 	return 0;
 }
 
@@ -89,4 +99,9 @@ void SceneGamePlay::SpawnRock()
 	rock->Init();
 	
 	rockSpawnTimer -= 0.6f;
+}
+
+int SceneGamePlay::GetScore() const
+{
+	return score;
 }

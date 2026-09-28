@@ -1,10 +1,12 @@
 #pragma once
+#include "glc2d.h"
 
 enum SceneRequest
 {
     SCENE_KEEP = 0,
     SCENE_BEGIN,
     SCENE_PLAY,
+    SCENE_RESULT,
     SCENE_QUIT,
 };
 
