@@ -1,6 +1,4 @@
-#include <stdio.h>
 #include "CApplication.h"
-#include "glc2d.h"
 
 CApplication g_app;
 
@@ -17,9 +15,10 @@ int AppRender()
 int CApplication::Init()
 {
 	InitSdk();
-	ChangeScene(1);
+	ChangeScene(SCENE_BEGIN);
 
 	m_prevTime = g2_TimeGetTime();
+
 	return 0;
 }
 
@@ -29,8 +28,13 @@ int CApplication::Update()
 	float deltaTime = static_cast<float>(currentTime - m_prevTime) / 1000.0f;
 	m_prevTime = currentTime;
 
+	if (nullptr == m_scene)
+	{
+		return 0;
+	}
+
 	int nextScene = m_scene->Update(deltaTime);
-	if (0 != nextScene)
+	if (SCENE_KEEP != nextScene)
 	{
 		ChangeScene(nextScene);
 	}
@@ -40,14 +44,24 @@ int CApplication::Update()
 
 int CApplication::Destroy()
 {
-	m_scene->Destroy();
+	if (nullptr != m_scene)
+	{
+		m_scene->Destroy();
+		m_scene = nullptr;
+	}
+
 	g2_DestroyWin();
+
 	return 0;
 }
 
 int CApplication::Render()
 {
-	m_scene->Render();
+	if (nullptr != m_scene)
+	{
+		m_scene->Render();
+	}
+
 	return 0;
 }
 
@@ -68,29 +82,36 @@ int CApplication::InitSdk()
 
 void CApplication::ChangeScene(int scene)
 {
-	if (m_scene != nullptr)
+	Scene* nextScene{};
+
+	switch (scene)
+	{
+	case SCENE_BEGIN:
+		nextScene = &m_sceneBegin;
+		break;
+
+	case SCENE_PLAY:
+		nextScene = &m_scenePlay;
+		break;
+
+	case SCENE_RESULT:
+		m_sceneResult.SetScore(m_scenePlay.GetScore());
+		nextScene = &m_sceneResult;
+		break;
+
+	case SCENE_QUIT:
+		PostQuitMessage(0);
+		return;
+
+	default:
+		return;
+	}
+
+	if (nullptr != m_scene)
 	{
 		m_scene->Destroy();
 	}
 
-	switch (scene)
-	{
-	case 1:
-		m_scene = &m_sceneBegin;
-		break;
-
-	case 2:
-		m_scene = &m_scenePlay;
-		break;
-
-	case 3:
-		m_scene = &m_sceneResult;
-		break;
-
-	default:
-		PostQuitMessage(0);
-		return;
-	}
-
+	m_scene = nextScene;
 	m_scene->Init();
 }

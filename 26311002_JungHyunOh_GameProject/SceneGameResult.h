@@ -13,16 +13,28 @@ public:
 	int Destroy() override;
 	int Render() override;
 
+public:
+	void SetScore(int value);
+
+private:
+	void SelectButton(Button* button);
+
 protected:
 	int m_txBg{ -1 };
-	int m_font{ -1 };
+	int m_txResultBg{ -1 };
+	int m_gameOverFont{ -1 };
+	int m_scoreFont{ -1 };
+
 	int m_selectedIndex{};
 
-	Button m_startButton;
-	Button m_exitButton;
+	Button m_retryButton;
+	Button m_returnButton;
 
 	Button* m_selectedButton{};
 
-	vector<Button*>buttons{};
+	vector<Button*> buttons{};
+
+	int score{};
+	LONG startX{};
 };
 

@@ -20,6 +20,8 @@ public:
 protected:
 	int m_txBg{ -1 };
 	int m_bgm{ -1 };
+	int m_hitSound{ -1 };
+	int m_scoreFont{ -1 };
 	int m_font{ -1 };
 
 	int score{};
@@ -28,6 +30,9 @@ protected:
 
 	Player player;
 	vector<Rock*> rocks;
+
+	bool isGameOver{};
+	float gameOverTimer{};
 
 	void SpawnRock();
 };

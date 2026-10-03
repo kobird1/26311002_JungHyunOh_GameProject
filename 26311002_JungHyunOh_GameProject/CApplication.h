@@ -1,6 +1,7 @@
 #pragma once
 #include <windows.h>
 #include <string>
+#include "glc2d.h"
 #include "SceneGameBegin.h"
 #include "SceneGamePlay.h"
 #include "SceneGameResult.h"
@@ -28,7 +29,7 @@ protected:
 	POINT m_winPos{ 100, 100 };
 	SIZE m_winSize{ 360, 640 };
 
-	string m_winName = "StoneRush";
+	string m_winName = "DEEPFALL";
 
 	SceneGameBegin m_sceneBegin;
 	SceneGamePlay m_scenePlay;

@@ -18,6 +18,7 @@ private:
 
 private:
 	int m_txBg{ -1 };
+	int m_txTitle{ -1 };
 	int m_font{ -1 };
 	int m_selectedIndex{};
 
@@ -26,6 +27,6 @@ private:
 
 	Button* m_selectedButton{};
 
-	vector<Button*>buttons{};
+	vector<Button*> buttons{};
 };
 

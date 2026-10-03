@@ -9,7 +9,14 @@ public:
     int Render() override;
     int Destroy() override;
 
+public:
+    void SetDead();
+
 protected:
     int m_txPlayer{ -1 };
+    int m_txDead{ -1 };
+
+private:
+    bool isDead{};
 };
 
